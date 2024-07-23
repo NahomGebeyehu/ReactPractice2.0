@@ -46,11 +46,11 @@ function App() {
     }
 
     let localTodos = localStorage.getItem("todos");
-    if (!localTodos) {
+    if (!localTodostodos) {
       return;
     }
 
-    localTodos = JSON.parse(localTodos).todos;
+    localTodos = JSON.parse(localTodos).getItem("todos");
     setTodos(localTodos);
   }, []);
   return (
