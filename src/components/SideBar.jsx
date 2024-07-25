@@ -1,4 +1,4 @@
-export default function SideBar() {
+export default function SideBar({ setShowModel }) {
   return (
     <div className="sidebar">
       <div className="bgOverlay"></div>
@@ -12,7 +12,11 @@ export default function SideBar() {
             in any manner
           </p>
         </div>
-        <button>
+        <button
+          onClick={() => {
+            setShowModel(false);
+          }}
+        >
           <i className="fa-solid fa-right-long"></i>
         </button>
       </div>
