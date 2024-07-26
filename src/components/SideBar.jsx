@@ -1,23 +1,16 @@
-export default function SideBar({ setShowModel }) {
+export default function SideBar(props) {
+  const { handleToggleModal, data } = props;
   return (
     <div className="sidebar">
-      <div className="bgOverlay"></div>
+      <div onClick={handleToggleModal} className="bgOverlay"></div>
       <div className="sidebarContents">
-        <h2>Mars Images</h2>
-        <div>
-          <p>This image was genearate by Al, our intern</p>
-          <p>
-            Mars is a conspiracy created by the goverment so we will forget
-            about what they did on the moon that is a lie and i wont accept it
-            in any manner
-          </p>
+        <h1>{data?.title}</h1>
+        <div className="descriptionContainer">
+          <p className="descriptionTitle">{data?.date}</p>
+          <p>{data?.explanation}</p>
         </div>
-        <button
-          onClick={() => {
-            setShowModel(false);
-          }}
-        >
-          <i className="fa-solid fa-right-long"></i>
+        <button onClick={handleToggleModal}>
+          <i className="fa-solid fa-arrow-right"></i>
         </button>
       </div>
     </div>

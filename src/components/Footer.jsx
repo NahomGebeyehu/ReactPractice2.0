@@ -1,15 +1,13 @@
-export default function Footer({ setShowModel }) {
+export default function Footer(props) {
+  const { handleToggleModal } = props;
+  const { data } = props;
   return (
     <footer>
       <div className="bgGradient"></div>
       <div>
-        <h2>The Mars Image Fake</h2>
-        <h1>LIES OF THE GOVERMENT</h1>
-        <button
-          onClick={() => {
-            setShowModel(true);
-          }}
-        >
+        <h2>APODER PROJECT</h2>
+        <h1>{data?.title}</h1>
+        <button onClick={handleToggleModal}>
           <i className="fa-solid fa-circle-info"></i>
         </button>
       </div>

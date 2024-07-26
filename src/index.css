@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color: white;
-  background-color: #242424;
+  background-color: #030615;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,16 +12,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  position: relative;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  display: relative;
 }
 
 .imgContainer {
@@ -38,10 +38,6 @@
   object-fit: cover;
 }
 
-footer button:hover {
-  opacity: 0.7;
-}
-
 footer {
   position: fixed;
   bottom: 0;
@@ -51,6 +47,40 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  padding: 1rem;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+footer h1 {
+  font-size: 1.4rem;
+}
+
+footer h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+footer button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 1rem;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+footer button i {
+  font-size: 1.3rem;
+}
+
+footer button:hover {
+  opacity: 0.7;
 }
 
 .bgGradient {
@@ -71,7 +101,7 @@ footer {
 .bgOverlay {
   position: absolute;
   inset: 0;
-  background-color: #030615;
+  background: #030615;
   opacity: 0.6;
 }
 
@@ -84,10 +114,15 @@ footer {
   padding: 1rem;
   overflow-y: scroll;
   height: 100%;
-  width: 90%;
+  width: 80%;
   max-width: 800px;
   margin-left: auto;
-  background-color: #030615;
+  background: #030615;
+}
+
+.sidebarContents h2 {
+  font-weight: 300;
+  font-size: 1.4rem;
 }
 
 .sidebarContents div {
@@ -95,11 +130,52 @@ footer {
 }
 
 .sidebarContents button {
-  background-color: transparent;
+  background: transparent;
   color: white;
   border: none;
   outline: none;
   margin-right: auto;
+  cursor: pointer;
+  transition-duration: 200ms;
+  padding: 1rem 0;
+}
+
+.sidebarContents button:hover {
+  opacity: 0.7;
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.descriptionTitle {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+.loadingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.loadingState i {
+  opacity: 0.2;
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (min-width: 375px) {
@@ -107,10 +183,18 @@ footer {
     position: relative;
     inset: unset;
     min-width: 30%;
-    box-shadow: 0 0 10px 1px #030615;
+    max-height: 100vh;
+    box-shadow: 0 0 40px 1px #030615;
   }
 
   .sidebarContents {
     margin: unset;
+    width: 100%;
+  }
+
+  .bgOverlay {
+    right: 0;
+    left: unset;
+    width: 100vw;
   }
 }
